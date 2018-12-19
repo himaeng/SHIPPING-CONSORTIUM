@@ -340,8 +340,8 @@ peer:
                 KeyStore:
 
     # Path on the file system where peer will find MSP local configurations
-    #mspConfigPath: ../../../orderer/multi-org/crypto-config/peerOrganizations/acme.com/users/Admin@acme.com/msp
-    mspConfigPath: ../../../ca/multi-org-ca/client/acme/admin/msp
+    #mspConfigPath: ../../../orderer/multi-org/crypto-config/peerOrganizations/pup.com/users/Admin@pup.com/msp
+    mspConfigPath: ../../../ca/multi-org-ca/client/pup/admin/msp
 
     # Identifier of the local MSP
     # ----!!!!IMPORTANT!!!-!!!IMPORTANT!!!-!!!IMPORTANT!!!!----
@@ -350,7 +350,7 @@ peer:
     # to match the name of one of the MSPs in each of the channel
     # that this peer is a member of. Otherwise this peer's messages
     # will not be identified as valid by other nodes.
-    localMspId: AcmeMSP
+    localMspId: PupMSP
 
     # CLI common client config options
     client:

@@ -7,12 +7,12 @@ General:
 
     # Genesis Block Method = Provisional then GenesisProfile need to be specified 
     # GenesisMethod: provisional
-    # GenesisProfile: AcmeOrdererGenesis
+    # GenesisProfile: PupOrdererGenesis
 
     # Genesis Block Method = file then GenesisFile need to be specified 
     # The genesis block file need to be generated using the configtxgen tool
     GenesisMethod: file
-    GenesisFile: ./airline-genesis.block
+    GenesisFile: ./shipping-genesis.block
 
 
     # Ledger Type can be ram, json or file
@@ -31,7 +31,7 @@ General:
 
     # Directory for the private crypto material needed by the
     # orderer. 
-    # LocalMSPDir: ./crypto-config/ordererOrganizations/acme.com/orderers/orderer.acme.com/msp
+    # LocalMSPDir: ./crypto-config/ordererOrganizations/pup.com/orderers/orderer.pup.com/msp
     LocalMSPDir: ../../ca/multi-org-ca/client/orderer/orderer/msp
 
     # Identity to register the local MSP material with the MSP

@@ -80,7 +80,7 @@ Roles & Identities
     fabric-ca-client enroll -u http://orderer:pw@localhost:7054
 
 
-3. pup-admin       ACME Org Adminstrator
+3. pup-admin       PUP Org Adminstrator
                     Allowed to create the identities of type peer, user & client for Pup Org
                     Allowed to manage affiliation
 

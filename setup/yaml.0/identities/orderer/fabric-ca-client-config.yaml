@@ -34,10 +34,10 @@ csr:
     - C: US
       ST: "New York"
       L:  "Newark"
-      O:  acme
+      O:  pup
       OU: 
   hosts:
-    - acme.com
+    - pup.com
     - localhost
 
 #############################################################################

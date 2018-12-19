@@ -1,7 +1,7 @@
 # Joins the peer to a channel
 # ORG_NAME="${PWD##*/}"
 
-AIRLINE_CHANNEL_BLOCK=./shippingchannel.block
+PUP_CHANNEL_BLOCK=./shippingchannel.block
 
 function usage {
     echo "Usage:     ./join-shipping-channel.sh  ORG_NAME  PEER_NAME  [PORT_NUMBER_BASE default=7050] [ORDERER_ADDRESS default=localhost:7050]"
@@ -52,7 +52,7 @@ source set-env.sh $ORG_NAME  $PEER_NAME  $PORT_NUMBER_BASE
 export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/admin/msp
 
 # Fetch shipping channel configuration
-peer channel fetch config $AIRLINE_CHANNEL_BLOCK -o $ORDERER_ADDRESS -c shippingchannel
+peer channel fetch config $PUP_CHANNEL_BLOCK -o $ORDERER_ADDRESS -c shippingchannel
 
 # Join the channel
-peer channel join -o $ORDERER_ADDRESS -b $AIRLINE_CHANNEL_BLOCK
+peer channel join -o $ORDERER_ADDRESS -b $PUP_CHANNEL_BLOCK

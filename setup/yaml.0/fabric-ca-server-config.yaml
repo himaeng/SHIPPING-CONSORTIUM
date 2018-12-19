@@ -18,7 +18,7 @@ crlsizelimit: 512000
 #############################################################################
 ca:
   # Unique Name (across the network) of this CA
-  name: acme-ca
+  name: pup-ca
   # Key file (is only used to import a private key into BCCSP)
   keyfile:
   # Certificate file (default: ca-cert.pem)
@@ -29,7 +29,7 @@ ca:
 # Affiliations are hierarchical in nature. 
 #############################################################################
 affiliations:
-   acme:
+   pup:
       - logistics
       - accounting
       - b2b
@@ -65,15 +65,15 @@ registry:
 #  This controls the creation of the root CA certificate.
 ###########################################################################
 csr:
-   cn: Acme-CA
+   cn: Pup-CA
    names:
       - C: US
         ST: "New York"
         L: Newark
-        O: Acme
+        O: Pup
         OU: B2B
    hosts:
-     - acme.com
+     - pup.com
      - localhost
    ca:
       expiry: 131400h

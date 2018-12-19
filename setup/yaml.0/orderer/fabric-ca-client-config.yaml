@@ -34,10 +34,10 @@ csr:
     - C: US
       ST: "New York"
       L:  "Newark"
-      O:  acme
+      O:  pup
       OU: 
   hosts:
-    - acme.com
+    - pup.com
     - localhost
 
 #############################################################################
@@ -48,8 +48,8 @@ id:
   name: XYZ
   # By default the type is set to be user
   type: user
-  # Default org is acme - make sure the org is set up in CA server :-)
-  affiliation: acme
+  # Default org is pup - make sure the org is set up in CA server :-)
+  affiliation: pup
   # Set to max of 2
   maxenrollments: -1
   # Adds a custom attribute

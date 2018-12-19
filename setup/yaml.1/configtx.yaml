@@ -16,7 +16,7 @@ Organizations:
   - &Orderer
     Name: Orderer
     ID: OrdererMSP
-    #MSPDir: ./crypto-config/ordererOrganizations/acme.com/msp
+    #MSPDir: ./crypto-config/ordererOrganizations/pup.com/msp
     MSPDir: ../../ca/multi-org-ca/client/orderer/msp
     Policies: &OrdererPolicies
       Readers:
@@ -29,21 +29,21 @@ Organizations:
           Type: Signature
           Rule: "OR('OrdererMSP.admin')"
 
-  - &Acme
-    Name: Acme
-    ID: AcmeMSP
-    #MSPDir: ./crypto-config/peerOrganizations/acme.com/msp
-    MSPDir: ../../ca/multi-org-ca/client/acme/msp
-    Policies: &AcmePolicies
+  - &Pup
+    Name: Pup
+    ID: PupMSP
+    #MSPDir: ./crypto-config/peerOrganizations/pup.com/msp
+    MSPDir: ../../ca/multi-org-ca/client/pup/msp
+    Policies: &PupPolicies
       Readers:
           Type: Signature
-          Rule: "OR('AcmeMSP.member')"
+          Rule: "OR('PupMSP.member')"
       Writers:
           Type: Signature
-          Rule: "OR('AcmeMSP.member')"
+          Rule: "OR('PupMSP.member')"
       Admins:
           Type: Signature
-          Rule: "OR('AcmeMSP.admin')"
+          Rule: "OR('PupMSP.admin')"
     AnchorPeers:
       - Host: localhost
         Port: 7051
@@ -210,7 +210,7 @@ Channel: &ChannelDefaults
 #   PROFILES
 Profiles:
 
-  AirlineOrdererGenesis:
+  ShippingOrdererGenesis:
       <<: *ChannelDefaults
       Orderer:
           <<: *OrdererDefaults
@@ -222,24 +222,24 @@ Profiles:
             <<: *ApplicationDefaults
 
             Organizations:
-                - <<: *Acme               
+                - <<: *Pup               
 
       Consortiums:
 
-        AirlineConsortium:
+        ShippingConsortium:
             
             Organizations:
-                  - <<: *Acme                               
+                  - <<: *Pup                               
                   
-  AirlineChannel:
+  ShippingChannel:
     <<: *ChannelDefaults
-    Consortium: AirlineConsortium
+    Consortium: ShippingConsortium
         
     Application:
         <<: *ApplicationDefaults
         
         Organizations:
-            - <<: *Acme
+            - <<: *Pup
         
 
 
