@@ -112,6 +112,8 @@ typings/
 # generated files
 ca/client/*
 ca/server/*
+orderer/*.block
+orderer/*.tx
 
 # End of https://www.gitignore.io/api/node,macos
 0

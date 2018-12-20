@@ -19,6 +19,8 @@ fi
 # Set the environment variable $1 = ORG_NAME Identity=admin
 source set-identity.sh 
 
+# Set the environment variable to point to core.yaml
+export FABRIC_CFG_PATH=`pwd`
 
 # Variable holds path to the channel tx file
 CHANNEL_TX_FILE=$PWD/../orderer/shipping-channel.tx
