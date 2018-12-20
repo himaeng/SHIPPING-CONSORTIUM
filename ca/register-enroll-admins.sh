@@ -66,7 +66,7 @@ function enrollAdmins {
 # If client YAML not found then copy the client YAML before enrolling
 # YAML picked from setup/config/multi-org-ca/yaml.0/ORG-Name/*
 function    checkCopyYAML {
-    SETUP_CONFIG_CLIENT_YAML="../../setup/config/multi-org-ca/yaml.0"
+    SETUP_CONFIG_CLIENT_YAML="../setup/yaml.0"
     if [ -f "$FABRIC_CA_CLIENT_HOME/fabric-ca-client.yaml" ]
     then 
         echo "Using the existing Client Yaml for $ORG_NAME  admin"

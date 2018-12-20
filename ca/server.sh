@@ -7,8 +7,8 @@
 # 4. Enrolling the Root CA Server admin
 
 export FABRIC_CA_SERVER_HOME=`pwd`/server
-DEFAULT_SERVER_CONFIG_YAML="../../setup/config/multi-org-ca/yaml.0/fabric-ca-server-config.yaml"
-DEFAULT_CLIENT_CONFIG_YAML="../../setup/config/multi-org-ca/yaml.0/fabric-ca-client-config.yaml"
+DEFAULT_SERVER_CONFIG_YAML="../setup/yaml.0/fabric-ca-server-config.yaml"
+DEFAULT_CLIENT_CONFIG_YAML="../setup/yaml.0/fabric-ca-client-config.yaml"
 
 # Used in go command - sleeps between start & enroll
 SLEEP_TIME=4
