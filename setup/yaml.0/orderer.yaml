@@ -32,7 +32,7 @@ General:
     # Directory for the private crypto material needed by the
     # orderer. 
     # LocalMSPDir: ./crypto-config/ordererOrganizations/pup.com/orderers/orderer.pup.com/msp
-    LocalMSPDir: ../../ca/client/orderer/orderer/msp
+    LocalMSPDir: ../ca/client/orderer/orderer/msp
 
     # Identity to register the local MSP material with the MSP
     LocalMSPID: OrdererMSP

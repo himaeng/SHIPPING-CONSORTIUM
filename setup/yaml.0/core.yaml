@@ -340,8 +340,8 @@ peer:
                 KeyStore:
 
     # Path on the file system where peer will find MSP local configurations
-    #mspConfigPath: ../../../orderer/crypto-config/peerOrganizations/pup.com/users/Admin@pup.com/msp
-    mspConfigPath: ../../../ca/client/pup/admin/msp
+    #mspConfigPath: ../../orderer/crypto-config/peerOrganizations/pup.com/users/Admin@pup.com/msp
+    mspConfigPath: ../../ca/client/pup/admin/msp
 
     # Identifier of the local MSP
     # ----!!!!IMPORTANT!!!-!!!IMPORTANT!!!-!!!IMPORTANT!!!!----
