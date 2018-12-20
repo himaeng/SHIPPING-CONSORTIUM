@@ -39,6 +39,9 @@ CHANNEL_TX_FILE="$PWD/../orderer/shipping-channel.tx"
 # Sets the environment variables for the given identity
 source set-identity.sh  
 
+# Set the environment variable to point to core.yaml
+export FABRIC_CFG_PATH=`pwd`
+
 # Submit the channel create transation
 peer channel create -o $ORDERER_ADDRESS -c shippingchannel -f $CHANNEL_TX_FILE
 
