@@ -4,7 +4,7 @@
 
 # Function checks for the availability of the 
 function    checkCopyYAML {
-    SETUP_CONFIG_CLIENT_YAML="../../setup/config/multi-org-ca/yaml.0/identities/orderer/fabric-ca-client-config.yaml"
+    SETUP_CONFIG_CLIENT_YAML="../setup/yaml.0/identities/orderer/fabric-ca-client-config.yaml"
     if [ -f "$FABRIC_CA_CLIENT_HOME/fabric-ca-client.yaml" ]
     then 
         echo "Using the existing Client Yaml for orderer"
@@ -17,7 +17,7 @@ function    checkCopyYAML {
 
 # Function sets the FABRIC_CA_CLIENT_HOME
 function    setFabricCaClientHome {
-    CA_CLIENT_FOLDER="../../ca/multi-org-ca/client/orderer"
+    CA_CLIENT_FOLDER="../ca/client/orderer"
     export FABRIC_CA_CLIENT_HOME="$CA_CLIENT_FOLDER/$IDENTITY"
 }
 

@@ -34,7 +34,7 @@ fi
 
 # Channel transaction file location
 # The transaction should have been signed by one or more admins based on policy
-CHANNEL_TX_FILE="$PWD/../../orderer/multi-org-ca/shipping-channel.tx"
+CHANNEL_TX_FILE="$PWD/../orderer/shipping-channel.tx"
 
 # Sets the environment variables for the given identity
 source set-identity.sh  

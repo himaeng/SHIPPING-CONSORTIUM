@@ -6,9 +6,9 @@ the appropriate folders on the independent physical/virtual server
 folders.
 
 References are being made to the crypto in the subfolders from the 
-orderer/multi-org
-peer/pup/multi-org
-peer/budget/multi-org
+orderer/
+peer/pup/
+peer/budget/
 
 PS:
 ===
@@ -191,7 +191,7 @@ The generated MSP will be used in the recipe for adding the Org/Budget
 3. As budget-admin enroll
     . ./setclient.sh budget budget-admin
     fabric-ca-client enroll -u http://budget-admin:pw@localhost:7054
-    This will generte the crypto under ca/multi-org-ca/client/budget
+    This will generte the crypto under ca/client/budget
 
 4. Add admin cert to budget-admin
 
@@ -219,7 +219,7 @@ Configtx.Yaml Setup
 ===================
 * COPYING of policy.0 configtx PENDING
 
-Copy the setup/config/ca/multi-org-ca/policy.0/configtx.yaml   orderer/multi-org-ca
+Copy the setup/config/ca/multi-org-ca/policy.0/configtx.yaml   orderer
 
 Launch orderer
 
@@ -228,14 +228,14 @@ Shipping Channel Creation
 Pup Admin will take the role of (ShippingChannel) channel creator
 Although the policy is MAJORITY admin it would 
 
-* Copy the core.yaml file from policy.0 to peer/multi-org-ca/pup
+* Copy the core.yaml file from policy.0 to peer/pup
 Used by peer binary for admin commands only. It points to the admin MSP - so that admin can take appropriate actions
 
 
 #PENDING
 
-* Copy the orderer/multi-org-ca/shipping-channel.tx to peer/multi-org-ca/pup
-cp ../../../orderer/multi-org-ca/shipping-channel.tx  .
+* Copy the orderer/shipping-channel.tx to peer/pup
+cp ../../orderer/shipping-channel.tx  .
 
 peer channel create -o localhost:7050 -c shippingchannel -f ./shipping-channel.tx
 
@@ -287,7 +287,7 @@ Recipe: Add a peer to pup org
         cp ./client/pup/pup-admin/msp/signcerts/*   ./client/pup/peer2/msp/admincerts
 
 2. Setup the Peer peer2 for pup
-   peer/multi-org-ca/peer
+   peer/
 
     2.1 Launch the peer
         ./launch-peer.sh pup peer2 8050
@@ -319,7 +319,7 @@ There are 2 sceanrios
 1. Existing Peer added as an acnchor peer
 2. New peer added as an anchor peer
 
-multi-org-ca/peer
+peer
 . set-env.sh pup pup-admin 7050
 cd to config 
 
@@ -367,18 +367,18 @@ peer channel update -f config_update_in_envelope.block -c ordererchannel -o loca
 Recipe: Add an Org Budget to Network
 ====================================
 
-ca/multi-org-ca
+ca/
 
 1. Generate the crypto material for Budget
-ca/multi-org-ca
+ca/
 
-multi-org-ca/config
+setup/
 
 2. Setup configtxgen YAML with params for Budget
 - get the configtxgen.yaml 
-cp ../../../orderer/multi-org-ca/configtx.yaml .
+cp ../../orderer/configtx.yaml .
 FABRIC_CFG_PATH=$PWD/.. && configtxgen -channelID ordererchannel -printOrg Budget > budget.json
-(Solution=setup/config/multi-org-ca/policy.1)
+(Solution=setup/policy.1)
 
 
 
@@ -435,7 +435,7 @@ Recipe - add the Budget to shipping channel
 Setup the budget peer1:
 =======================
 1. Budget admin creates the crypto for peer1
-ca/multi-org-ca
+ca/
 
 - setup the peer identity
 . ./setclient.sh budget budget-admin
@@ -453,7 +453,7 @@ fabric-ca-client register --id.type peer --id.name budget-peer1 --id.secret pw -
     Copy the admin cert
     cp ./client/budget/budget-admin/msp/signcerts/*   ./client/budget/peer1/msp/admincerts
 
-2. Copy the core.yaml from setup/config/multi-org-ca/policy.0 to peer/multi-org-ca/budget
+2. Copy the core.yaml from setup/policy.0 to peer/budget
 cp 
 
 3. Launch and check logs
@@ -466,7 +466,7 @@ Add the budget to shipping channel
 =================================
 Since only pup-admin has the access. The pup-admin will carry out the following task.
 
-peer/multi-org-ca
+peer/
 . set-env.sh pup pup-admin 7050 pup-admin
 
  

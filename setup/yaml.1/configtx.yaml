@@ -1,5 +1,5 @@
 # configtx.1
-# Used in the multi-org-ca setup
+# Used in the ca setup
 # Admin adds the Budget organization
 
 #   CAPABILITIES
@@ -17,7 +17,7 @@ Organizations:
     Name: Orderer
     ID: OrdererMSP
     #MSPDir: ./crypto-config/ordererOrganizations/pup.com/msp
-    MSPDir: ../../ca/multi-org-ca/client/orderer/msp
+    MSPDir: ../ca/client/orderer/msp
     Policies: &OrdererPolicies
       Readers:
           Type: Signature
@@ -33,7 +33,7 @@ Organizations:
     Name: Pup
     ID: PupMSP
     #MSPDir: ./crypto-config/peerOrganizations/pup.com/msp
-    MSPDir: ../../ca/multi-org-ca/client/pup/msp
+    MSPDir: ../ca/client/pup/msp
     Policies: &PupPolicies
       Readers:
           Type: Signature
@@ -52,7 +52,7 @@ Organizations:
   - &Budget
     Name: Budget
     ID: BudgetMSP
-    MSPDir: ../../ca/multi-org-ca/client/budget/msp
+    MSPDir: ../../ca/client/budget/msp
     Policies: &BudgetPolicies
       Readers:
           Type: Signature

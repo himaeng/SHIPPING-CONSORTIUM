@@ -28,14 +28,14 @@ fi
 
 # Function checks for the availability of the 
 function    checkCopyYAML {
-    SETUP_CONFIG_CLIENT_YAML="../../setup/config/multi-org-ca/yaml.0/identities/$ORG_NAME/$PEER_NAME/fabric-ca-client-config.yaml"
+    SETUP_CONFIG_CLIENT_YAML="../setup/config/yaml.0/identities/$ORG_NAME/$PEER_NAME/fabric-ca-client-config.yaml"
     # Placeholder
     # This is not implemented - but is placed here to show how you can manage the CSR for the peers like other identities
 }
 
 # Function sets the FABRIC_CA_CLIENT_HOME
 function    setFabricCaClientHome {
-    CA_CLIENT_FOLDER="../../ca/multi-org-ca/client/$ORG_NAME"
+    CA_CLIENT_FOLDER="../ca/client/$ORG_NAME"
     export FABRIC_CA_CLIENT_HOME="$CA_CLIENT_FOLDER/$IDENTITY"
 }
 

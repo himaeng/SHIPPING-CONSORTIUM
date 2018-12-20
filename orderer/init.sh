@@ -1,6 +1,6 @@
 # Generates the orderer | generate genesis block for ordererchannel
 
-BASE_CONFIG_DIR=../../setup/config/multi-org
+BASE_CONFIG_DIR=../setup/
 
 export ORDERER_GENERAL_LOGLEVEL=debug
 

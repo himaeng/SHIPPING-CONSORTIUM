@@ -16,4 +16,4 @@ rm -rf ./log
 
 
 echo "Done."
-echo "To delete 'orderer' identity also use:  ca/multi-org-ca/remove-identity.sh orderer orderer"
+echo "To delete 'orderer' identity also use:  ca/remove-identity.sh orderer orderer"

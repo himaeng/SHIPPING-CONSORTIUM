@@ -1,4 +1,4 @@
-multi-org-ca Peer Scripts
+ca Peer Scripts
 =========================
 
 1. Environment scripts:

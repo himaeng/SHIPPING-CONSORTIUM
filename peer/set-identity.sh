@@ -20,7 +20,7 @@ else
 fi
 
 # Create the path to the crypto config folder
-CRYPTO_CONFIG_ROOT_FOLDER=`pwd`/../../ca/multi-org-ca/client
+CRYPTO_CONFIG_ROOT_FOLDER=`pwd`/../ca/client
 
 export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/$IDENTITY/msp
 
