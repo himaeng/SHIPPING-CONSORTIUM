@@ -3,7 +3,7 @@
 #   1. Identity for the new ORG has been created
 #   2. Execute the ./fetch-config-json.sh script
 #   3. Setup the configtx.yaml file in ./config folder   
-#      [e.g., refer to setup/config/multi-or-ca/yaml.1 in which Budget org is added]
+#      [e.g., refer to setup/yaml.1 in which Budget org is added]
 
 # CHANGE THESE BASED ON NEEDS
 CHANNEL_ID="shippingchannel"
